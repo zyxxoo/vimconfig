@@ -96,8 +96,12 @@ let g:racer_experimental_completer=1
 let $RUST_SRC_PATH="~/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src"
 
 syntax enable
-set background=dark
-set t_Co=16           
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
+let g:solarized_termcolors=256
 colorscheme solarized 
 
 "nerdtree
